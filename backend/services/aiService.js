@@ -255,7 +255,7 @@ Key Guidelines:
 
     try {
       const response = await this.openaiClient.chat.completions.create({
-        model: process.env.OPENAI_MODEL || 'gpt-3.5-turbo',
+        model: process.env.OPENAI_MODEL || 'llama2',
         messages: [
           { role: 'system', content: this.systemPrompts[queryType] || this.systemPrompts.general },
           { role: 'user', content: prompt }

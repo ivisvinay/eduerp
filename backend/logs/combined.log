@@ -1,0 +1,12 @@
+{"level":"info","message":"Initializing LLM Service...","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:50"}
+{"level":"info","message":"Open WebUI connection: Success","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:52"}
+{"level":"info","message":"Found 0 available models","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:54"}
+{"level":"info","message":"LLM Service initialized successfully with model: llama3.2:latest","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:54"}
+{"level":"info","message":"LLM Service initialized","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:54"}
+{"level":"info","message":"Cache Service initialized","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:54"}
+{"level":"info","message":"Cache Service initialized","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:54"}
+{"level":"info","message":"🚀 EduERP LLM Backend running on port 5001","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:54"}
+{"level":"info","message":"🏥 Health check: http://localhost:5001/api/health","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:54"}
+{"level":"info","message":"🤖 LLM Service: Connected","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:54"}
+{"level":"info","message":"🌐 Frontend URL: http://localhost:3000","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:08:54"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"eduerp-llm-backend","timestamp":"2025-07-19 12:13:02"}

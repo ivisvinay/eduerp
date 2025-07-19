@@ -3,26 +3,21 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const compression = require('compression');
+const rateLimit = require('express-rate-limit');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
 require('dotenv').config();
 
 // Import services and middleware
 const logger = require('./services/logger');
-const rateLimiter = require('./middleware/rateLimiter');
+const llmService = require('./services/llmService');
+const cacheService = require('./services/cacheService');
+const authMiddleware = require('./middleware/auth');
 const errorHandler = require('./middleware/errorHandler');
-const dataManager = require('./services/dataManager');
-const aiService = require('./services/aiService');
 
 // Import routes
-const authRoutes = require('./routes/auth');
-const schoolRoutes = require('./routes/schools');
-const studentRoutes = require('./routes/students');
-const teacherRoutes = require('./routes/teachers');
-const financeRoutes = require('./routes/finance');
-const inventoryRoutes = require('./routes/inventory');
-const analyticsRoutes = require('./routes/analytics');
-const aiRoutes = require('./routes/ai');
+const llmRoutes = require('./routes/llm');
+const healthRoutes = require('./routes/health');
 
 const app = express();
 const server = createServer(app);
@@ -33,88 +28,89 @@ const io = new Server(server, {
   }
 });
 
-// Middleware
-app.use(helmet());
+const PORT = process.env.PORT || 5001;
+
+// Security middleware
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" }
+}));
+
+// CORS configuration
 app.use(cors({
   origin: process.env.FRONTEND_URL || "http://localhost:3000",
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+// Compression
 app.use(compression());
-app.use(morgan('combined', { stream: { write: (message) => logger.info(message.trim()) } }));
+
+// Logging
+app.use(morgan('combined', { 
+  stream: { write: (message) => logger.info(message.trim()) } 
+}));
+
+// Body parsing
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Rate limiting
-app.use('/api', rateLimiter);
-
-// Health check endpoint
-app.get('/health', (req, res) => {
-  res.status(200).json({
-    status: 'healthy',
-    timestamp: new Date().toISOString(),
-    version: process.env.npm_package_version || '1.0.0',
-    services: {
-      dataManager: dataManager.isHealthy(),
-      aiService: aiService.isHealthy()
-    }
-  });
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  message: {
+    error: 'Too many requests from this IP, please try again later.',
+    retryAfter: '15 minutes'
+  },
+  standardHeaders: true,
+  legacyHeaders: false
 });
 
+app.use('/api', limiter);
+
 // API Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/schools', schoolRoutes);
-app.use('/api/students', studentRoutes);
-app.use('/api/teachers', teacherRoutes);
-app.use('/api/finance', financeRoutes);
-app.use('/api/inventory', inventoryRoutes);
-app.use('/api/analytics', analyticsRoutes);
-app.use('/api/ai', aiRoutes);
+app.use('/api/health', healthRoutes);
+app.use('/api/llm', llmRoutes);
 
 // Socket.io for real-time communication
 io.on('connection', (socket) => {
-  logger.info(`User connected: ${socket.id}`);
+  logger.info(`Client connected: ${socket.id}`);
 
-  // Join school room
-  socket.on('join_school', (schoolId) => {
-    socket.join(`school_${schoolId}`);
-    logger.info(`Socket ${socket.id} joined school ${schoolId}`);
-  });
-
-  // Handle AI chat
-  socket.on('ai_chat', async (data) => {
+  // Handle chat requests
+  socket.on('llm_query', async (data) => {
     try {
-      const { message, context, schoolId } = data;
+      const { query, schoolData, conversationHistory, sessionId } = data;
       
-      // Get school data for context
-      const schoolData = await dataManager.getSchoolData(schoolId);
-      
-      // Process AI query
-      const aiResponse = await aiService.processQuery(message, {
-        ...context,
-        schoolData
-      });
+      logger.info(`Processing LLM query from ${socket.id}: ${query.substring(0, 100)}...`);
 
-      // Send response back to user
-      socket.emit('ai_response', {
+      // Process query through LLM service
+      const result = await llmService.processSchoolQuery(
+        query, 
+        schoolData, 
+        conversationHistory,
+        { sessionId, socketId: socket.id }
+      );
+
+      // Send response back to client
+      socket.emit('llm_response', {
         id: data.id,
-        response: aiResponse.content,
-        suggestions: aiResponse.suggestions,
-        actions: aiResponse.actions,
+        success: result.success,
+        response: result.response,
+        suggestions: result.suggestions,
+        usage: result.usage,
+        model: result.model,
         timestamp: new Date().toISOString()
       });
 
-      // Broadcast to school if it's a system-wide update
-      if (aiResponse.broadcast) {
-        socket.to(`school_${schoolId}`).emit('system_update', {
-          type: aiResponse.type,
-          message: aiResponse.broadcastMessage,
-          timestamp: new Date().toISOString()
-        });
+      // Log usage for monitoring
+      if (result.usage) {
+        logger.info(`LLM Query completed - Tokens: ${result.usage.total_tokens}, Model: ${result.model}`);
       }
 
     } catch (error) {
-      logger.error('AI chat error:', error);
-      socket.emit('ai_error', {
+      logger.error('LLM query error:', error);
+      socket.emit('llm_error', {
         id: data.id,
         error: 'Failed to process your request. Please try again.',
         timestamp: new Date().toISOString()
@@ -122,37 +118,36 @@ io.on('connection', (socket) => {
     }
   });
 
-  // Handle real-time data updates
-  socket.on('data_update', async (data) => {
+  // Handle connection test
+  socket.on('test_connection', async () => {
     try {
-      const { type, schoolId, updates } = data;
-      
-      // Update data through data manager
-      const result = await dataManager.updateData(type, schoolId, updates);
-      
-      if (result.success) {
-        // Broadcast update to all school members
-        io.to(`school_${schoolId}`).emit('data_updated', {
-          type,
-          data: result.data,
-          timestamp: new Date().toISOString()
-        });
-      }
+      const status = await llmService.getConnectionStatus();
+      socket.emit('connection_status', status);
     } catch (error) {
-      logger.error('Data update error:', error);
-      socket.emit('update_error', {
-        error: 'Failed to update data',
-        timestamp: new Date().toISOString()
-      });
+      logger.error('Connection test error:', error);
+      socket.emit('connection_status', { connected: false, error: error.message });
+    }
+  });
+
+  // Handle model selection
+  socket.on('set_model', async (data) => {
+    try {
+      const { modelId } = data;
+      await llmService.setModel(modelId);
+      socket.emit('model_changed', { modelId, success: true });
+      logger.info(`Model changed to ${modelId} for socket ${socket.id}`);
+    } catch (error) {
+      logger.error('Model change error:', error);
+      socket.emit('model_changed', { modelId: data.modelId, success: false, error: error.message });
     }
   });
 
   socket.on('disconnect', () => {
-    logger.info(`User disconnected: ${socket.id}`);
+    logger.info(`Client disconnected: ${socket.id}`);
   });
 });
 
-// Error handling middleware
+// Error handling
 app.use(errorHandler);
 
 // 404 handler
@@ -166,47 +161,69 @@ app.use('*', (req, res) => {
 });
 
 // Graceful shutdown
-process.on('SIGTERM', () => {
-  logger.info('SIGTERM received, shutting down gracefully');
-  server.close(() => {
-    logger.info('Process terminated');
-    process.exit(0);
+const gracefulShutdown = (signal) => {
+  logger.info(`${signal} received, shutting down gracefully`);
+  
+  server.close(async () => {
+    try {
+      // Cleanup services
+      await llmService.cleanup();
+      await cacheService.cleanup();
+      
+      logger.info('Server closed successfully');
+      process.exit(0);
+    } catch (error) {
+      logger.error('Error during shutdown:', error);
+      process.exit(1);
+    }
   });
+
+  // Force close after 10 seconds
+  setTimeout(() => {
+    logger.error('Forced shutdown due to timeout');
+    process.exit(1);
+  }, 10000);
+};
+
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+
+// Unhandled promise rejection
+process.on('unhandledRejection', (reason, promise) => {
+  logger.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
 
-process.on('SIGINT', () => {
-  logger.info('SIGINT received, shutting down gracefully');
-  server.close(() => {
-    logger.info('Process terminated');
-    process.exit(0);
-  });
+// Uncaught exception
+process.on('uncaughtException', (error) => {
+  logger.error('Uncaught Exception:', error);
+  process.exit(1);
 });
 
-// Initialize services
-async function initializeServer() {
+// Initialize services and start server
+async function startServer() {
   try {
-    // Initialize data manager
-    await dataManager.initialize();
-    logger.info('Data Manager initialized');
+    // Initialize services
+    await llmService.initialize();
+    logger.info('LLM Service initialized');
 
-    // Initialize AI service
-    await aiService.initialize();
-    logger.info('AI Service initialized');
+    await cacheService.initialize();
+    logger.info('Cache Service initialized');
 
-    const PORT = process.env.PORT || 5000;
+    // Start server
     server.listen(PORT, () => {
-      logger.info(`🚀 Agentic Schools ERP Backend running on port ${PORT}`);
-      logger.info(`🏥 Health check available at http://localhost:${PORT}/health`);
-      logger.info(`🤖 AI Service: ${aiService.getStatus()}`);
+      logger.info(`🚀 EduERP LLM Backend running on port ${PORT}`);
+      logger.info(`🏥 Health check: http://localhost:${PORT}/api/health`);
+      logger.info(`🤖 LLM Service: ${llmService.isConnected ? 'Connected' : 'Disconnected'}`);
+      logger.info(`🌐 Frontend URL: ${process.env.FRONTEND_URL || 'http://localhost:3000'}`);
     });
 
   } catch (error) {
-    logger.error('Failed to initialize server:', error);
+    logger.error('Failed to start server:', error);
     process.exit(1);
   }
 }
 
-// Start server
-initializeServer();
+// Start the server
+startServer();
 
 module.exports = { app, server, io };
