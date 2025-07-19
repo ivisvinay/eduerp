@@ -1,0 +1,1087 @@
+{
+  "school": {
+    "id": "SCH001",
+    "name": "Modern International School",
+    "address": "Sector 15, Gurgaon, Haryana, India",
+    "principal": "Dr. Priya Sharma",
+    "totalStudents": 1250,
+    "totalTeachers": 85,
+    "grades": ["Pre-K", "K", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    "established": 2010,
+    "board": "CBSE",
+    "contact": {
+      "phone": "+91-124-4567890",
+      "email": "info@modernintschool.edu",
+      "website": "www.modernintschool.edu"
+    },
+    "facilities": ["Library", "Computer Lab", "Science Lab", "Sports Complex", "Auditorium", "Cafeteria"]
+  },
+  "students": [
+    {
+      "id": "STU001",
+      "name": "Aarav Patel",
+      "rollNumber": "MIS2024001",
+      "grade": "8",
+      "section": "A",
+      "dateOfBirth": "2010-03-15",
+      "gender": "Male",
+      "bloodGroup": "O+",
+      "parentName": "Rajesh Patel",
+      "parentPhone": "+91-9876543210",
+      "parentEmail": "rajesh.patel@email.com",
+      "emergencyContact": "+91-9876543211",
+      "address": "H-45, Sector 12, Gurgaon, Haryana",
+      "admissionDate": "2022-04-01",
+      "fees": {
+        "annual": 120000,
+        "paid": 80000,
+        "pending": 40000,
+        "dueDate": "2024-12-31",
+        "paymentHistory": [
+          {
+            "date": "2024-04-15",
+            "amount": 40000,
+            "type": "Tuition Fee Q1"
+          },
+          {
+            "date": "2024-07-15",
+            "amount": 40000,
+            "type": "Tuition Fee Q2"
+          }
+        ]
+      },
+      "grades": {
+        "Mathematics": 85,
+        "English": 78,
+        "Science": 92,
+        "Social Studies": 76,
+        "Hindi": 82,
+        "Physical Education": 88,
+        "Computer Science": 91
+      },
+      "attendance": {
+        "present": 142,
+        "absent": 8,
+        "total": 150,
+        "percentage": 94.7,
+        "monthlyBreakdown": [
+          { "month": "April", "present": 22, "absent": 0, "total": 22 },
+          { "month": "May", "present": 23, "absent": 2, "total": 25 },
+          { "month": "June", "present": 24, "absent": 1, "total": 25 },
+          { "month": "July", "present": 23, "absent": 2, "total": 25 }
+        ]
+      },
+      "behavior": "Excellent",
+      "achievements": ["Math Olympiad Winner", "Science Fair 2nd Prize", "Perfect Attendance Award"],
+      "extracurricular": ["Chess Club", "Science Club", "Basketball Team"],
+      "medicalInfo": {
+        "allergies": ["Nuts"],
+        "medications": [],
+        "specialNeeds": "None"
+      }
+    },
+    {
+      "id": "STU002",
+      "name": "Priya Sharma",
+      "rollNumber": "MIS2024002",
+      "grade": "10",
+      "section": "B",
+      "dateOfBirth": "2008-07-22",
+      "gender": "Female",
+      "bloodGroup": "A+",
+      "parentName": "Suresh Sharma",
+      "parentPhone": "+91-9876543211",
+      "parentEmail": "suresh.sharma@email.com",
+      "emergencyContact": "+91-9876543212",
+      "address": "A-23, Sector 8, Gurgaon, Haryana",
+      "admissionDate": "2020-04-01",
+      "fees": {
+        "annual": 140000,
+        "paid": 140000,
+        "pending": 0,
+        "dueDate": "2024-12-31",
+        "paymentHistory": [
+          {
+            "date": "2024-04-01",
+            "amount": 35000,
+            "type": "Tuition Fee Q1"
+          },
+          {
+            "date": "2024-07-01",
+            "amount": 35000,
+            "type": "Tuition Fee Q2"
+          },
+          {
+            "date": "2024-10-01",
+            "amount": 35000,
+            "type": "Tuition Fee Q3"
+          },
+          {
+            "date": "2024-12-01",
+            "amount": 35000,
+            "type": "Tuition Fee Q4"
+          }
+        ]
+      },
+      "grades": {
+        "Mathematics": 88,
+        "English": 94,
+        "Science": 87,
+        "Social Studies": 91,
+        "Hindi": 85,
+        "Physical Education": 92,
+        "Computer Science": 89
+      },
+      "attendance": {
+        "present": 148,
+        "absent": 2,
+        "total": 150,
+        "percentage": 98.7,
+        "monthlyBreakdown": [
+          { "month": "April", "present": 22, "absent": 0, "total": 22 },
+          { "month": "May", "present": 25, "absent": 0, "total": 25 },
+          { "month": "June", "present": 25, "absent": 0, "total": 25 },
+          { "month": "July", "present": 24, "absent": 1, "total": 25 }
+        ]
+      },
+      "behavior": "Outstanding",
+      "achievements": ["Head Girl", "English Debate Champion", "Academic Excellence Award", "National Science Olympiad Gold"],
+      "extracurricular": ["Debate Club", "Drama Club", "Student Council", "Environmental Club"],
+      "medicalInfo": {
+        "allergies": [],
+        "medications": [],
+        "specialNeeds": "None"
+      }
+    },
+    {
+      "id": "STU003",
+      "name": "Rohan Kumar",
+      "rollNumber": "MIS2024003",
+      "grade": "6",
+      "section": "A",
+      "dateOfBirth": "2012-11-08",
+      "gender": "Male",
+      "bloodGroup": "B+",
+      "parentName": "Anil Kumar",
+      "parentPhone": "+91-9876543212",
+      "parentEmail": "anil.kumar@email.com",
+      "emergencyContact": "+91-9876543213",
+      "address": "B-67, Sector 14, Gurgaon, Haryana",
+      "admissionDate": "2023-04-01",
+      "fees": {
+        "annual": 100000,
+        "paid": 60000,
+        "pending": 40000,
+        "dueDate": "2024-12-31",
+        "paymentHistory": [
+          {
+            "date": "2024-04-15",
+            "amount": 30000,
+            "type": "Tuition Fee Q1"
+          },
+          {
+            "date": "2024-07-20",
+            "amount": 30000,
+            "type": "Tuition Fee Q2"
+          }
+        ]
+      },
+      "grades": {
+        "Mathematics": 72,
+        "English": 68,
+        "Science": 75,
+        "Social Studies": 70,
+        "Hindi": 78,
+        "Physical Education": 85,
+        "Computer Science": 74
+      },
+      "attendance": {
+        "present": 135,
+        "absent": 15,
+        "total": 150,
+        "percentage": 90.0,
+        "monthlyBreakdown": [
+          { "month": "April", "present": 20, "absent": 2, "total": 22 },
+          { "month": "May", "present": 22, "absent": 3, "total": 25 },
+          { "month": "June", "present": 23, "absent": 2, "total": 25 },
+          { "month": "July", "present": 22, "absent": 3, "total": 25 }
+        ]
+      },
+      "behavior": "Good",
+      "achievements": ["Sports Day Participation", "Art Competition 3rd Prize"],
+      "extracurricular": ["Football Team", "Art Club"],
+      "medicalInfo": {
+        "allergies": ["Dairy"],
+        "medications": ["Inhaler for Asthma"],
+        "specialNeeds": "Mild Asthma"
+      }
+    },
+    {
+      "id": "STU004",
+      "name": "Ananya Singh",
+      "rollNumber": "MIS2024004",
+      "grade": "9",
+      "section": "A",
+      "dateOfBirth": "2009-05-12",
+      "gender": "Female",
+      "bloodGroup": "AB+",
+      "parentName": "Vikram Singh",
+      "parentPhone": "+91-9876543213",
+      "parentEmail": "vikram.singh@email.com",
+      "emergencyContact": "+91-9876543214",
+      "address": "C-89, Sector 18, Gurgaon, Haryana",
+      "admissionDate": "2021-04-01",
+      "fees": {
+        "annual": 130000,
+        "paid": 95000,
+        "pending": 35000,
+        "dueDate": "2024-12-31",
+        "paymentHistory": [
+          {
+            "date": "2024-04-10",
+            "amount": 32500,
+            "type": "Tuition Fee Q1"
+          },
+          {
+            "date": "2024-07-10",
+            "amount": 32500,
+            "type": "Tuition Fee Q2"
+          },
+          {
+            "date": "2024-10-10",
+            "amount": 30000,
+            "type": "Tuition Fee Q3 (Partial)"
+          }
+        ]
+      },
+      "grades": {
+        "Mathematics": 79,
+        "English": 86,
+        "Science": 82,
+        "Social Studies": 84,
+        "Hindi": 77,
+        "Physical Education": 90,
+        "Computer Science": 85
+      },
+      "attendance": {
+        "present": 140,
+        "absent": 10,
+        "total": 150,
+        "percentage": 93.3,
+        "monthlyBreakdown": [
+          { "month": "April", "present": 21, "absent": 1, "total": 22 },
+          { "month": "May", "present": 23, "absent": 2, "total": 25 },
+          { "month": "June", "present": 24, "absent": 1, "total": 25 },
+          { "month": "July", "present": 22, "absent": 3, "total": 25 }
+        ]
+      },
+      "behavior": "Very Good",
+      "achievements": ["Inter-School Dance Competition Winner", "Cultural Fest Organizer"],
+      "extracurricular": ["Dance Club", "Music Club", "Photography Club"],
+      "medicalInfo": {
+        "allergies": [],
+        "medications": [],
+        "specialNeeds": "None"
+      }
+    },
+    {
+      "id": "STU005",
+      "name": "Arjun Mehta",
+      "rollNumber": "MIS2024005",
+      "grade": "7",
+      "section": "B",
+      "dateOfBirth": "2011-09-03",
+      "gender": "Male",
+      "bloodGroup": "O-",
+      "parentName": "Neha Mehta",
+      "parentPhone": "+91-9876543214",
+      "parentEmail": "neha.mehta@email.com",
+      "emergencyContact": "+91-9876543215",
+      "address": "D-12, Sector 21, Gurgaon, Haryana",
+      "admissionDate": "2022-04-01",
+      "fees": {
+        "annual": 110000,
+        "paid": 110000,
+        "pending": 0,
+        "dueDate": "2024-12-31",
+        "paymentHistory": [
+          {
+            "date": "2024-03-25",
+            "amount": 110000,
+            "type": "Annual Fee (Advance Payment)"
+          }
+        ]
+      },
+      "grades": {
+        "Mathematics": 95,
+        "English": 89,
+        "Science": 93,
+        "Social Studies": 87,
+        "Hindi": 91,
+        "Physical Education": 94,
+        "Computer Science": 96
+      },
+      "attendance": {
+        "present": 149,
+        "absent": 1,
+        "total": 150,
+        "percentage": 99.3,
+        "monthlyBreakdown": [
+          { "month": "April", "present": 22, "absent": 0, "total": 22 },
+          { "month": "May", "present": 25, "absent": 0, "total": 25 },
+          { "month": "June", "present": 25, "absent": 0, "total": 25 },
+          { "month": "July", "present": 24, "absent": 1, "total": 25 }
+        ]
+      },
+      "behavior": "Excellent",
+      "achievements": ["Computer Programming Contest Winner", "Mathematics Olympiad State Level Qualifier", "School Topper Grade 7"],
+      "extracurricular": ["Coding Club", "Math Club", "Quiz Club", "Robotics Club"],
+      "medicalInfo": {
+        "allergies": [],
+        "medications": [],
+        "specialNeeds": "None"
+      }
+    }
+  ],
+  "teachers": [
+    {
+      "id": "TEA001",
+      "name": "Mrs. Sunita Verma",
+      "employeeId": "MIS-T-001",
+      "subject": "Mathematics",
+      "grades": ["8", "9", "10"],
+      "experience": 12,
+      "qualification": "M.Sc Mathematics, B.Ed",
+      "phone": "+91-9876543220",
+      "email": "sunita.verma@mis.edu",
+      "salary": 55000,
+      "joiningDate": "2020-06-01",
+      "address": "C-45, Sector 10, Gurgaon, Haryana",
+      "performance": "Excellent",
+      "classes": ["8A-Math", "9B-Math", "10A-Math"],
+      "specializations": ["Advanced Mathematics", "Competitive Math Coaching"],
+      "achievements": ["Best Teacher Award 2023", "Mathematics Department Head"],
+      "personalInfo": {
+        "dateOfBirth": "1985-12-10",
+        "gender": "Female",
+        "bloodGroup": "A+",
+        "emergencyContact": "+91-9876543221"
+      }
+    },
+    {
+      "id": "TEA002",
+      "name": "Mr. Amit Singh",
+      "employeeId": "MIS-T-002",
+      "subject": "English",
+      "grades": ["6", "7", "8"],
+      "experience": 8,
+      "qualification": "M.A English, B.Ed",
+      "phone": "+91-9876543221",
+      "email": "amit.singh@mis.edu",
+      "salary": 48000,
+      "joiningDate": "2022-04-01",
+      "address": "D-23, Sector 16, Gurgaon, Haryana",
+      "performance": "Very Good",
+      "classes": ["6A-English", "7B-English", "8A-English"],
+      "specializations": ["Literature", "Creative Writing", "Public Speaking"],
+      "achievements": ["Inter-School Debate Coach", "English Drama Director"],
+      "personalInfo": {
+        "dateOfBirth": "1990-08-15",
+        "gender": "Male",
+        "bloodGroup": "B+",
+        "emergencyContact": "+91-9876543222"
+      }
+    },
+    {
+      "id": "TEA003",
+      "name": "Dr. Kavita Reddy",
+      "employeeId": "MIS-T-003",
+      "subject": "Science",
+      "grades": ["9", "10", "11", "12"],
+      "experience": 15,
+      "qualification": "Ph.D Physics, M.Sc Physics, B.Ed",
+      "phone": "+91-9876543222",
+      "email": "kavita.reddy@mis.edu",
+      "salary": 65000,
+      "joiningDate": "2018-07-01",
+      "address": "E-56, Sector 22, Gurgaon, Haryana",
+      "performance": "Outstanding",
+      "classes": ["9A-Physics", "10B-Physics", "11A-Physics", "12A-Physics"],
+      "specializations": ["Physics", "Science Fair Coordination", "Research Methodology"],
+      "achievements": ["National Science Teacher Award", "Science Department Head", "Published Research Papers"],
+      "personalInfo": {
+        "dateOfBirth": "1982-03-20",
+        "gender": "Female",
+        "bloodGroup": "O+",
+        "emergencyContact": "+91-9876543223"
+      }
+    },
+    {
+      "id": "TEA004",
+      "name": "Mr. Rajesh Gupta",
+      "employeeId": "MIS-T-004",
+      "subject": "Computer Science",
+      "grades": ["6", "7", "8", "9", "10"],
+      "experience": 10,
+      "qualification": "M.Tech Computer Science, B.Tech CSE",
+      "phone": "+91-9876543223",
+      "email": "rajesh.gupta@mis.edu",
+      "salary": 60000,
+      "joiningDate": "2019-08-01",
+      "address": "F-78, Sector 25, Gurgaon, Haryana",
+      "performance": "Excellent",
+      "classes": ["6A-CS", "7A-CS", "8A-CS", "9A-CS", "10A-CS"],
+      "specializations": ["Programming", "Web Development", "Database Management", "AI/ML Basics"],
+      "achievements": ["Coding Club Coordinator", "School Website Developer", "Tech Innovation Award"],
+      "personalInfo": {
+        "dateOfBirth": "1988-11-05",
+        "gender": "Male",
+        "bloodGroup": "AB+",
+        "emergencyContact": "+91-9876543224"
+      }
+    },
+    {
+      "id": "TEA005",
+      "name": "Mrs. Priya Joshi",
+      "employeeId": "MIS-T-005",
+      "subject": "Social Studies",
+      "grades": ["6", "7", "8", "9", "10"],
+      "experience": 9,
+      "qualification": "M.A History, B.Ed",
+      "phone": "+91-9876543224",
+      "email": "priya.joshi@mis.edu",
+      "salary": 50000,
+      "joiningDate": "2021-06-01",
+      "address": "G-34, Sector 28, Gurgaon, Haryana",
+      "performance": "Very Good",
+      "classes": ["6B-SS", "7A-SS", "8B-SS", "9A-SS", "10B-SS"],
+      "specializations": ["History", "Geography", "Civics", "Cultural Studies"],
+      "achievements": ["Model UN Coordinator", "Heritage Club Head", "Social Studies Department Co-Head"],
+      "personalInfo": {
+        "dateOfBirth": "1987-06-18",
+        "gender": "Female",
+        "bloodGroup": "A-",
+        "emergencyContact": "+91-9876543225"
+      }
+    }
+  ],
+  "finance": {
+    "totalRevenue": 15600000,
+    "totalExpenses": 12400000,
+    "netProfit": 3200000,
+    "pendingFees": 890000,
+    "salaryExpenses": 8500000,
+    "infrastructureExpenses": 2100000,
+    "operationalExpenses": 1800000,
+    "monthlyBreakdown": [
+      { "month": "January", "income": 1200000, "expense": 950000, "profit": 250000 },
+      { "month": "February", "income": 1180000, "expense": 920000, "profit": 260000 },
+      { "month": "March", "income": 1350000, "expense": 1100000, "profit": 250000 },
+      { "month": "April", "income": 2100000, "expense": 1200000, "profit": 900000 },
+      { "month": "May", "income": 1280000, "expense": 980000, "profit": 300000 },
+      { "month": "June", "income": 1320000, "expense": 1000000, "profit": 320000 },
+      { "month": "July", "income": 1400000, "expense": 1050000, "profit": 350000 }
+    ],
+    "expenseCategories": [
+      { "category": "Salaries", "amount": 8500000, "percentage": 68.5 },
+      { "category": "Infrastructure", "amount": 2100000, "percentage": 16.9 },
+      { "category": "Operations", "amount": 1800000, "percentage": 14.5 }
+    ],
+    "revenueStreams": [
+      { "source": "Tuition Fees", "amount": 13500000, "percentage": 86.5 },
+      { "source": "Admission Fees", "amount": 1200000, "percentage": 7.7 },
+      { "source": "Transportation", "amount": 600000, "percentage": 3.8 },
+      { "source": "Events & Activities", "amount": 300000, "percentage": 1.9 }
+    ],
+    "budgetAllocations": {
+      "academics": 40,
+      "infrastructure": 25,
+      "sports": 15,
+      "extracurricular": 10,
+      "administration": 10
+    }
+  },
+  "inventory": [
+    {
+      "id": "INV001",
+      "item": "Textbooks - Grade 8 Math",
+      "category": "Academic",
+      "quantity": 45,
+      "minStock": 20,
+      "maxStock": 100,
+      "unitPrice": 450,
+      "totalValue": 20250,
+      "supplier": "National Book Trust",
+      "supplierContact": "+91-11-23456789",
+      "lastUpdated": "2024-07-15",
+      "location": "Library Store Room A",
+      "condition": "New"
+    },
+    {
+      "id": "INV002",
+      "item": "Whiteboard Markers",
+      "category": "Stationery",
+      "quantity": 8,
+      "minStock": 15,
+      "maxStock": 50,
+      "unitPrice": 25,
+      "totalValue": 200,
+      "supplier": "Office Supplies Co.",
+      "supplierContact": "+91-124-5678901",
+      "lastUpdated": "2024-07-10",
+      "location": "Admin Office Store",
+      "condition": "New"
+    },
+    {
+      "id": "INV003",
+      "item": "Chemistry Lab Equipment Set",
+      "category": "Laboratory",
+      "quantity": 3,
+      "minStock": 2,
+      "maxStock": 5,
+      "unitPrice": 15000,
+      "totalValue": 45000,
+      "supplier": "Scientific Instruments Ltd.",
+      "supplierContact": "+91-11-34567890",
+      "lastUpdated": "2024-07-12",
+      "location": "Chemistry Lab",
+      "condition": "Good"
+    },
+    {
+      "id": "INV004",
+      "item": "Sports Equipment - Football",
+      "category": "Sports",
+      "quantity": 12,
+      "minStock": 8,
+      "maxStock": 20,
+      "unitPrice": 800,
+      "totalValue": 9600,
+      "supplier": "Sports World",
+      "supplierContact": "+91-124-6789012",
+      "lastUpdated": "2024-07-08",
+      "location": "Sports Room",
+      "condition": "Good"
+    },
+    {
+      "id": "INV005",
+      "item": "Computer - Desktop",
+      "category": "Technology",
+      "quantity": 2,
+      "minStock": 5,
+      "maxStock": 15,
+      "unitPrice": 35000,
+      "totalValue": 70000,
+      "supplier": "Tech Solutions",
+      "supplierContact": "+91-124-7890123",
+      "lastUpdated": "2024-07-14",
+      "location": "Computer Lab",
+      "condition": "New"
+    }
+  ],
+  "events": [
+    {
+      "id": "EVT001",
+      "title": "Annual Sports Day",
+      "date": "2024-08-15",
+      "type": "Sports",
+      "participants": 850,
+      "budget": 150000,
+      "spentAmount": 45000,
+      "status": "Planned",
+      "coordinator": "Mrs. Kavita Reddy",
+      "venue": "School Sports Ground",
+      "description": "Annual inter-house sports competition with various athletic events",
+      "activities": ["100m Sprint", "Relay Race", "Long Jump", "Basketball", "Football"],
+      "prizes": {
+        "budget": 25000,
+        "categories": ["Individual Events", "Team Events", "House Championship"]
+      }
+    },
+    {
+      "id": "EVT002",
+      "title": "Science Exhibition",
+      "date": "2024-09-10",
+      "type": "Academic",
+      "participants": 300,
+      "budget": 75000,
+      "spentAmount": 25000,
+      "status": "In Progress",
+      "coordinator": "Mr. Rajesh Gupta",
+      "venue": "School Auditorium",
+      "description": "Student science projects and innovations showcase",
+      "activities": ["Project Displays", "Science Demonstrations", "Quiz Competition"],
+      "prizes": {
+        "budget": 15000,
+        "categories": ["Best Innovation", "Best Presentation", "Most Creative"]
+      }
+    },
+    {
+      "id": "EVT003",
+      "title": "Cultural Festival",
+      "date": "2024-10-20",
+      "type": "Cultural",
+      "participants": 600,
+      "budget": 200000,
+      "spentAmount": 0,
+      "status": "Planning",
+      "coordinator": "Mrs. Priya Joshi",
+      "venue": "School Campus",
+      "description": "Celebration of diverse cultures with performances and exhibitions",
+      "activities": ["Dance Performances", "Music Concerts", "Art Exhibition", "Food Stalls"],
+      "prizes": {
+        "budget": 30000,
+        "categories": ["Best Performance", "Best Cultural Display", "Overall Winner"]
+      }
+    }
+  ],
+  "classes": [
+    {
+      "id": "CLS001",
+      "grade": "8",
+      "section": "A",
+      "classTeacher": "Mrs. Sunita Verma",
+      "totalStudents": 35,
+      "subjects": [
+        { "subject": "Mathematics", "teacher": "Mrs. Sunita Verma", "periods": 6 },
+        { "subject": "English", "teacher": "Mr. Amit Singh", "periods": 5 },
+        { "subject": "Science", "teacher": "Dr. Kavita Reddy", "periods": 6 },
+        { "subject": "Social Studies", "teacher": "Mrs. Priya Joshi", "periods": 4 },
+        { "subject": "Computer Science", "teacher": "Mr. Rajesh Gupta", "periods": 2 }
+      ],
+      "timetable": {
+        "monday": ["Math", "English", "Science", "SS", "CS", "PE"],
+        "tuesday": ["English", "Math", "Science", "SS", "Art", "Music"],
+        "wednesday": ["Science", "Math", "English", "CS", "SS", "PE"],
+        "thursday": ["Math", "Science", "English", "SS", "Art", "Music"],
+        "friday": ["English", "Math", "Science", "CS", "SS", "PE"]
+      }
+    },
+    {
+      "id": "CLS002",
+      "grade": "10",
+      "section": "B",
+      "classTeacher": "Dr. Kavita Reddy",
+      "totalStudents": 32,
+      "subjects": [
+        { "subject": "Mathematics", "teacher": "Mrs. Sunita Verma", "periods": 6 },
+        { "subject": "English", "teacher": "Mr. Amit Singh", "periods": 5 },
+        { "subject": "Science", "teacher": "Dr. Kavita Reddy", "periods": 8 },
+        { "subject": "Social Studies", "teacher": "Mrs. Priya Joshi", "periods": 4 },
+        { "subject": "Computer Science", "teacher": "Mr. Rajesh Gupta", "periods": 3 }
+      ],
+      "timetable": {
+        "monday": ["Math", "English", "Science", "Science", "CS", "PE"],
+        "tuesday": ["English", "Math", "Science", "SS", "Art", "Music"],
+        "wednesday": ["Science", "Math", "English", "CS", "SS", "PE"],
+        "thursday": ["Math", "Science", "English", "SS", "CS", "Music"],
+        "friday": ["English", "Math", "Science", "Science", "SS", "PE"]
+      }
+    }
+  ],
+  "assignments": [
+    {
+      "id": "ASG001",
+      "title": "Quadratic Equations Practice",
+      "subject": "Mathematics",
+      "grade": "8",
+      "section": "A",
+      "teacher": "Mrs. Sunita Verma",
+      "assignedDate": "2024-07-15",
+      "dueDate": "2024-07-22",
+      "description": "Solve the given quadratic equations using different methods",
+      "maxMarks": 20,
+      "submissions": [
+        { "studentId": "STU001", "submittedDate": "2024-07-21", "marks": 18, "feedback": "Excellent work!" },
+        { "studentId": "STU003", "submittedDate": "2024-07-22", "marks": 14, "feedback": "Good attempt, work on method 2" }
+      ]
+    },
+    {
+      "id": "ASG002",
+      "title": "Essay on Environmental Conservation",
+      "subject": "English",
+      "grade": "10",
+      "section": "B",
+      "teacher": "Mr. Amit Singh",
+      "assignedDate": "2024-07-10",
+      "dueDate": "2024-07-20",
+      "description": "Write a 500-word essay on environmental conservation and its importance",
+      "maxMarks": 25,
+      "submissions": [
+        { "studentId": "STU002", "submittedDate": "2024-07-18", "marks": 23, "feedback": "Excellent essay with strong arguments" },
+        { "studentId": "STU004", "submittedDate": "2024-07-19", "marks": 20, "feedback": "Good content, improve conclusion" }
+      ]
+    },
+    {
+      "id": "ASG003",
+      "title": "Simple Machine Project",
+      "subject": "Science",
+      "grade": "6",
+      "section": "A",
+      "teacher": "Dr. Kavita Reddy",
+      "assignedDate": "2024-07-12",
+      "dueDate": "2024-07-25",
+      "description": "Create a working model of any simple machine and explain its working principle",
+      "maxMarks": 30,
+      "submissions": [
+        { "studentId": "STU003", "submittedDate": "2024-07-24", "marks": 25, "feedback": "Creative model, good explanation" }
+      ]
+    }
+  ],
+  "examinations": [
+    {
+      "id": "EXM001",
+      "title": "Mid-Term Examination",
+      "type": "Mid-Term",
+      "startDate": "2024-08-01",
+      "endDate": "2024-08-10",
+      "grades": ["6", "7", "8", "9", "10"],
+      "subjects": ["Mathematics", "English", "Science", "Social Studies", "Computer Science"],
+      "maxMarks": 100,
+      "duration": 180,
+      "results": [
+        {
+          "studentId": "STU001",
+          "results": {
+            "Mathematics": { "marks": 85, "grade": "A" },
+            "English": { "marks": 78, "grade": "B+" },
+            "Science": { "marks": 92, "grade": "A+" },
+            "Social Studies": { "marks": 76, "grade": "B+" },
+            "Computer Science": { "marks": 91, "grade": "A+" }
+          },
+          "totalMarks": 422,
+          "percentage": 84.4,
+          "rank": 2
+        },
+        {
+          "studentId": "STU002",
+          "results": {
+            "Mathematics": { "marks": 88, "grade": "A" },
+            "English": { "marks": 94, "grade": "A+" },
+            "Science": { "marks": 87, "grade": "A" },
+            "Social Studies": { "marks": 91, "grade": "A+" },
+            "Computer Science": { "marks": 89, "grade": "A" }
+          },
+          "totalMarks": 449,
+          "percentage": 89.8,
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "id": "EXM002",
+      "title": "Final Examination",
+      "type": "Final",
+      "startDate": "2024-11-15",
+      "endDate": "2024-11-30",
+      "grades": ["6", "7", "8", "9", "10"],
+      "subjects": ["Mathematics", "English", "Science", "Social Studies", "Computer Science"],
+      "maxMarks": 100,
+      "duration": 180,
+      "status": "Scheduled"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "NOT001",
+      "title": "Fee Payment Reminder",
+      "message": "Reminder: Q3 fee payment is due by July 31st, 2024",
+      "type": "Fee",
+      "priority": "High",
+      "recipients": ["Parents with pending fees"],
+      "createdDate": "2024-07-15",
+      "status": "Sent"
+    },
+    {
+      "id": "NOT002",
+      "title": "Sports Day Registration",
+      "message": "Sports Day registration is now open. Please register your child by August 1st",
+      "type": "Event",
+      "priority": "Medium",
+      "recipients": ["All Parents"],
+      "createdDate": "2024-07-10",
+      "status": "Sent"
+    },
+    {
+      "id": "NOT003",
+      "title": "Parent-Teacher Meeting",
+      "message": "Monthly PTM scheduled for July 25th, 2024. Please book your slot",
+      "type": "Meeting",
+      "priority": "High",
+      "recipients": ["All Parents"],
+      "createdDate": "2024-07-08",
+      "status": "Sent"
+    }
+  ],
+  "holidays": [
+    {
+      "id": "HOL001",
+      "title": "Independence Day",
+      "date": "2024-08-15",
+      "type": "National",
+      "description": "National Holiday - School Closed"
+    },
+    {
+      "id": "HOL002",
+      "title": "Gandhi Jayanti",
+      "date": "2024-10-02",
+      "type": "National",
+      "description": "National Holiday - School Closed"
+    },
+    {
+      "id": "HOL003",
+      "title": "Diwali Break",
+      "date": "2024-10-31",
+      "endDate": "2024-11-03",
+      "type": "Festival",
+      "description": "Diwali Festival Break - 4 days"
+    }
+  ],
+  "transportation": [
+    {
+      "id": "BUS001",
+      "busNumber": "MIS-01",
+      "route": "Sector 12 - Sector 18 - School",
+      "capacity": 45,
+      "currentStudents": 38,
+      "driver": "Ram Kumar",
+      "driverPhone": "+91-9876543230",
+      "attendant": "Geeta Devi",
+      "attendantPhone": "+91-9876543231",
+      "students": ["STU001", "STU003"],
+      "pickupPoints": [
+        { "location": "Sector 12 Metro Station", "time": "07:30" },
+        { "location": "Sector 14 Park", "time": "07:40" },
+        { "location": "Sector 16 Market", "time": "07:50" },
+        { "location": "School", "time": "08:00" }
+      ]
+    },
+    {
+      "id": "BUS002",
+      "busNumber": "MIS-02",
+      "route": "Sector 8 - Sector 22 - School",
+      "capacity": 45,
+      "currentStudents": 42,
+      "driver": "Suresh Yadav",
+      "driverPhone": "+91-9876543232",
+      "attendant": "Sunita Kumari",
+      "attendantPhone": "+91-9876543233",
+      "students": ["STU002", "STU004"],
+      "pickupPoints": [
+        { "location": "Sector 8 Main Gate", "time": "07:25" },
+        { "location": "Sector 10 Mall", "time": "07:35" },
+        { "location": "Sector 18 Hospital", "time": "07:45" },
+        { "location": "Sector 22 Police Station", "time": "07:55" },
+        { "location": "School", "time": "08:00" }
+      ]
+    }
+  ],
+  "library": {
+    "totalBooks": 15000,
+    "categories": [
+      { "category": "Fiction", "count": 3500 },
+      { "category": "Non-Fiction", "count": 2800 },
+      { "category": "Textbooks", "count": 4200 },
+      { "category": "Reference", "count": 1800 },
+      { "category": "Children's Books", "count": 2700 }
+    ],
+    "digitalResources": {
+      "eBooks": 2500,
+      "audioBooks": 500,
+      "researchDatabases": 15,
+      "onlineJournals": 50
+    },
+    "issuedBooks": [
+      {
+        "studentId": "STU001",
+        "bookTitle": "Advanced Mathematics",
+        "author": "R.D. Sharma",
+        "issueDate": "2024-07-10",
+        "dueDate": "2024-07-24",
+        "status": "Issued"
+      },
+      {
+        "studentId": "STU002",
+        "bookTitle": "English Literature",
+        "author": "William Shakespeare",
+        "issueDate": "2024-07-12",
+        "dueDate": "2024-07-26",
+        "status": "Issued"
+      }
+    ]
+  },
+  "cafeteria": {
+    "menuItems": [
+      {
+        "id": "MNU001",
+        "name": "Vegetarian Thali",
+        "price": 80,
+        "category": "Main Course",
+        "ingredients": ["Rice", "Dal", "Vegetable Curry", "Roti", "Salad"],
+        "nutritionalInfo": {
+          "calories": 450,
+          "protein": 15,
+          "carbs": 65,
+          "fat": 12
+        }
+      },
+      {
+        "id": "MNU002",
+        "name": "Sandwich Combo",
+        "price": 60,
+        "category": "Snacks",
+        "ingredients": ["Bread", "Vegetables", "Cheese", "Juice"],
+        "nutritionalInfo": {
+          "calories": 320,
+          "protein": 12,
+          "carbs": 45,
+          "fat": 10
+        }
+      },
+      {
+        "id": "MNU003",
+        "name": "Fresh Fruit Bowl",
+        "price": 40,
+        "category": "Healthy",
+        "ingredients": ["Apple", "Banana", "Orange", "Grapes"],
+        "nutritionalInfo": {
+          "calories": 150,
+          "protein": 2,
+          "carbs": 35,
+          "fat": 1
+        }
+      }
+    ],
+    "weeklyMenu": {
+      "monday": ["Vegetarian Thali", "Sandwich Combo", "Fresh Fruit Bowl"],
+      "tuesday": ["Rajma Rice", "Pasta", "Smoothie"],
+      "wednesday": ["Chole Bhature", "Pizza Slice", "Fruit Salad"],
+      "thursday": ["South Indian Combo", "Burger", "Lassi"],
+      "friday": ["Biryani", "Wrap", "Ice Cream"]
+    }
+  },
+  "healthRecords": [
+    {
+      "studentId": "STU001",
+      "checkupDate": "2024-06-15",
+      "height": 152,
+      "weight": 45,
+      "bmi": 19.5,
+      "bloodPressure": "110/70",
+      "vision": "6/6",
+      "vaccinations": ["COVID-19", "Hepatitis B", "Tetanus"],
+      "healthIssues": ["Mild Myopia"],
+      "recommendations": ["Regular eye checkup", "Outdoor activities"]
+    },
+    {
+      "studentId": "STU002",
+      "checkupDate": "2024-06-18",
+      "height": 158,
+      "weight": 48,
+      "bmi": 19.2,
+      "bloodPressure": "115/75",
+      "vision": "6/6",
+      "vaccinations": ["COVID-19", "Hepatitis B", "Tetanus", "HPV"],
+      "healthIssues": [],
+      "recommendations": ["Continue balanced diet", "Regular exercise"]
+    },
+    {
+      "studentId": "STU003",
+      "checkupDate": "2024-06-20",
+      "height": 145,
+      "weight": 38,
+      "bmi": 18.1,
+      "bloodPressure": "108/65",
+      "vision": "6/6",
+      "vaccinations": ["COVID-19", "Hepatitis B", "Tetanus"],
+      "healthIssues": ["Mild Asthma"],
+      "recommendations": ["Avoid dust exposure", "Keep inhaler handy", "Regular exercise"]
+    }
+  ],
+  "extracurricular": [
+    {
+      "id": "EXT001",
+      "name": "Chess Club",
+      "coordinator": "Mr. Rajesh Gupta",
+      "schedule": "Monday & Wednesday 3:30-4:30 PM",
+      "location": "Library",
+      "maxMembers": 30,
+      "currentMembers": 25,
+      "memberIds": ["STU001", "STU005"],
+      "achievements": ["Inter-School Chess Championship - 2nd Place"],
+      "fees": 500
+    },
+    {
+      "id": "EXT002",
+      "name": "Dance Club",
+      "coordinator": "Mrs. Priya Joshi",
+      "schedule": "Tuesday & Thursday 3:30-4:30 PM",
+      "location": "Activity Hall",
+      "maxMembers": 40,
+      "currentMembers": 35,
+      "memberIds": ["STU002", "STU004"],
+      "achievements": ["Annual Day Best Performance", "Inter-School Dance Competition Winner"],
+      "fees": 800
+    },
+    {
+      "id": "EXT003",
+      "name": "Science Club",
+      "coordinator": "Dr. Kavita Reddy",
+      "schedule": "Friday 3:30-4:30 PM",
+      "location": "Science Lab",
+      "maxMembers": 25,
+      "currentMembers": 20,
+      "memberIds": ["STU001", "STU005"],
+      "achievements": ["Science Fair Best Project", "National Science Olympiad Participation"],
+      "fees": 600
+    },
+    {
+      "id": "EXT004",
+      "name": "Football Team",
+      "coordinator": "Mr. Physical Education Teacher",
+      "schedule": "Daily 4:00-5:00 PM",
+      "location": "Sports Ground",
+      "maxMembers": 22,
+      "currentMembers": 18,
+      "memberIds": ["STU003"],
+      "achievements": ["District Level Football Championship - 3rd Place"],
+      "fees": 1000
+    }
+  ],
+  "infrastructure": {
+    "classrooms": 45,
+    "laboratories": 8,
+    "library": 1,
+    "auditorium": 1,
+    "sportsGround": 1,
+    "cafeteria": 1,
+    "medicalRoom": 1,
+    "computerLab": 3,
+    "artRoom": 2,
+    "musicRoom": 1,
+    "playground": 2,
+    "parking": 2,
+    "facilities": [
+      {
+        "name": "Science Laboratory",
+        "capacity": 40,
+        "equipment": ["Microscopes", "Chemistry Sets", "Physics Apparatus"],
+        "lastMaintenance": "2024-06-15",
+        "condition": "Excellent"
+      },
+      {
+        "name": "Computer Laboratory",
+        "capacity": 35,
+        "equipment": ["Desktop Computers", "Projector", "Interactive Whiteboard"],
+        "lastMaintenance": "2024-07-01",
+        "condition": "Good"
+      },
+      {
+        "name": "Library",
+        "capacity": 100,
+        "equipment": ["Books", "Reading Tables", "Digital Catalog System"],
+        "lastMaintenance": "2024-05-20",
+        "condition": "Excellent"
+      }
+    ]
+  }
+}
